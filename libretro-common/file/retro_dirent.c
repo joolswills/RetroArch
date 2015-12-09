@@ -26,6 +26,7 @@
 #if defined(_WIN32)
 #  ifdef _MSC_VER
 #    define setmode _setmode
+#    include <compat/msvc.h>
 #  endif
 #  ifdef _XBOX
 #    include <xtl.h>

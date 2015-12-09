@@ -48,15 +48,21 @@ extern "C" bool win32_browser(
       const char *title,
       const char *initial_dir);
 
+#endif
+
 unsigned g_resize_width;
 unsigned g_resize_height;
 bool g_restore_desktop;
-static unsigned g_pos_x = CW_USEDEFAULT;
-static unsigned g_pos_y = CW_USEDEFAULT;
+
 static bool g_resized;
 bool g_inited;
 static bool g_quit;
 static HWND g_hwnd;
+
+#if !defined(_XBOX)
+
+static unsigned g_pos_x = CW_USEDEFAULT;
+static unsigned g_pos_y = CW_USEDEFAULT;
 
 extern void *dinput_wgl;
 extern void *curD3D;
@@ -107,11 +113,9 @@ static BOOL CALLBACK win32_monitor_enum_proc(HMONITOR hMonitor,
 
 void win32_monitor_from_window(HWND data, bool destroy)
 {
-#ifndef _XBOX
    win32_monitor_last = MonitorFromWindow(data, MONITOR_DEFAULTTONEAREST);
    if (destroy && data)
       DestroyWindow(data);
-#endif
 }
 
 void win32_monitor_get_info(void)
@@ -369,6 +373,8 @@ bool win32_monitor_set_fullscreen(unsigned width, unsigned height, unsigned refr
 
    RARCH_LOG("[WGL]: Setting fullscreen to %ux%u @ %uHz on device %s.\n", width, height, refresh, dev_name);
    return ChangeDisplaySettingsEx(dev_name, &devmode, NULL, CDS_FULLSCREEN, NULL) == DISP_CHANGE_SUCCESSFUL;
+#else
+   return true;
 #endif
 }
 

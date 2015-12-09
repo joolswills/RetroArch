@@ -28,9 +28,11 @@
 #if defined(_WIN32)
 #  ifdef _MSC_VER
 #    define setmode _setmode
+#    include "compat/msvc.h"
 #  endif
 #  ifdef _XBOX
 #    include <xtl.h>
+#    include <io.h>
 #    define INVALID_FILE_ATTRIBUTES -1
 #  else
 #    include <io.h>

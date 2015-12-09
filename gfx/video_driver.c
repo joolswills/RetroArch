@@ -1192,6 +1192,9 @@ void video_driver_menu_settings(void **list_data, void *list_info_data,
       void *group_data, void *subgroup_data, const char *parent_group)
 {
 #ifdef HAVE_MENU
+#ifdef _XBOX
+   settings_t *settings = config_get_ptr();
+#endif
    rarch_setting_t **list                    = (rarch_setting_t**)list_data;
    rarch_setting_info_t *list_info           = (rarch_setting_info_t*)list_info_data;
    rarch_setting_group_info_t *group_info    = (rarch_setting_group_info_t*)group_data;

@@ -98,6 +98,10 @@ static aslclient asl_client;
 #endif
 #endif
 
+#ifdef _XBOX1
+   char msg_new[1024], buffer[1024];
+#endif
+
    if (!RARCH_LOG_VERBOSE())
       return;
 #if TARGET_OS_IPHONE
@@ -118,7 +122,6 @@ static aslclient asl_client;
 #endif
 #elif defined(_XBOX1)
    /* FIXME: Using arbitrary string as fmt argument is unsafe. */
-   char msg_new[1024], buffer[1024];
    snprintf(msg_new, sizeof(msg_new), "%s: %s %s",
          PROGRAM_NAME,
          tag ? tag : "",

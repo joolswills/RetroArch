@@ -69,7 +69,7 @@ COMPATIBILITY
 #include "../compat/compat_strl.c"
 #endif
 
-#if defined(_WIN32) && !defined(_XBOX)
+#if defined(_WIN32)
 #include "../compat/compat_posix_string.c"
 #endif
 

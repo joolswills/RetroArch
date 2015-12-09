@@ -799,7 +799,7 @@ static void *d3d_init(const video_info_t *info,
 
 #ifdef _XBOX
    video_driver_ctl(RARCH_DISPLAY_CTL_SET_OWN_DRIVER, NULL);
-   video_driver_ctl(RARCH_INPUT_CTL_SET_OWN_DRIVER, NULL);
+   input_driver_ctl(RARCH_INPUT_CTL_SET_OWN_DRIVER, NULL);
 #endif
 
    return vid;
@@ -838,7 +838,9 @@ static void d3d_free(void *data)
    if (d3d->g_pD3D)
       d3d->g_pD3D->Release();
 
+#ifndef _XBOX
    win32_monitor_from_window(window, true);
+#endif
 
    if (d3d)
       delete d3d;
@@ -1228,7 +1230,7 @@ static void d3d_overlay_render(d3d_video_t *d3d, overlay_t *overlay)
       vert[i][1]  += 0.5f;
    }
 
-   overlay->vert_buf->Lock(0, sizeof(vert), &verts, 0);
+   overlay->vert_buf->Lock(0, sizeof(vert), (BYTE **) &verts, 0);
    memcpy(verts, vert, sizeof(vert));
    d3d_vertex_buffer_unlock(overlay->vert_buf);
 

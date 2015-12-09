@@ -37,6 +37,10 @@
 #endif
 #endif
 
+#ifdef _XBOX
+#include "compat/strl.h"
+#endif
+
 static bool exit_spawn;
 static bool exitspawn_start_game;
 

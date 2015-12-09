@@ -20,7 +20,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				OptimizeForProcessor="2"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\..\libretro-common\include\compat\msvc&quot;;&quot;$(SolutionDir)\..\libretro-common\include&quot;;&quot;$(SolutionDir)\msvc-71&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)\..\..\libretro-common\include\compat\msvc&quot;;&quot;$(SolutionDir)\..\..\libretro-common\include\compat&quot;;&quot;$(SolutionDir)\..\..\libretro-common\include&quot;;&quot;$(SolutionDir)\msvc-71&quot;"
 				PreprocessorDefinitions="_DEBUG;_XBOX;_XBOX1;IS_SALAMANDER;RARCH_CONSOLE;HAVE_RARCH_EXEC"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
@@ -68,7 +68,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\..\libretro-common\include\compat\msvc&quot;;&quot;$(SolutionDir)\..\libretro-common\include&quot;;&quot;$(SolutionDir)\msvc-71&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)\..\..\libretro-common\include\compat\msvc&quot;;&quot;$(SolutionDir)\..\..\libretro-common\include\compat&quot;;&quot;$(SolutionDir)\..\..\libretro-common\include&quot;;&quot;$(SolutionDir)\msvc-71&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX;_XBOX1;PROFILE;IS_SALAMANDER;RARCH_CONSOLE;HAVE_RARCH_EXEC"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -120,7 +120,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\..\libretro-common\include\compat\msvc&quot;;&quot;$(SolutionDir)\..\libretro-common\include&quot;;&quot;$(SolutionDir)\msvc-71&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)\..\..\libretro-common\include\compat\msvc&quot;;&quot;$(SolutionDir)\..\..\libretro-common\include\compat&quot;;&quot;$(SolutionDir)\..\..\libretro-common\include&quot;;&quot;$(SolutionDir)\msvc-71&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX;_XBOX1;PROFILE;FASTCAP;IS_SALAMANDER;RARCH_CONSOLE;HAVE_RARCH_EXEC"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -173,7 +173,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\..\libretro-common\include\compat\msvc&quot;;&quot;$(SolutionDir)\..\libretro-common\include&quot;;&quot;$(SolutionDir)\msvc-71&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)\..\..\libretro-common\include\compat\msvc&quot;;&quot;$(SolutionDir)\..\..\libretro-common\include\compat&quot;;&quot;$(SolutionDir)\..\..\libretro-common\include&quot;;&quot;$(SolutionDir)\msvc-71&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX;_XBOX1;IS_SALAMANDER;RARCH_CONSOLE;HAVE_RARCH_EXEC"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -225,7 +225,7 @@
 				Optimization="3"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)\..\libretro-common\include\compat\msvc&quot;;&quot;$(SolutionDir)\..\libretro-common\include&quot;;&quot;$(SolutionDir)\msvc-71&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)\..\..\libretro-common\include\compat\msvc&quot;;&quot;$(SolutionDir)\..\..\libretro-common\include\compat&quot;;&quot;$(SolutionDir)\..\..\libretro-common\include&quot;;&quot;$(SolutionDir)\msvc-71&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX;_XBOX1;LTCG;IS_SALAMANDER;RARCH_CONSOLE;HAVE_RARCH_EXEC"
 				StringPooling="TRUE"
 				RuntimeLibrary="0"
@@ -273,7 +273,7 @@
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
 			<File
-				RelativePath="..\..\frontend\frontend_driver.c">
+				RelativePath="..\..\..\frontend\frontend_driver.c">
 				<FileConfiguration
 					Name="Debug|Xbox">
 					<Tool
@@ -306,7 +306,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\..\frontend\frontend_salamander.c">
+				RelativePath="..\..\..\frontend\frontend_salamander.c">
 				<FileConfiguration
 					Name="Debug|Xbox">
 					<Tool
@@ -339,10 +339,10 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\..\frontend\drivers\platform_null.c">
+				RelativePath="..\..\..\frontend\drivers\platform_null.c">
 			</File>
 			<File
-				RelativePath="..\..\frontend\drivers\platform_xdk.c">
+				RelativePath="..\..\..\frontend\drivers\platform_xdk.cpp">
 				<FileConfiguration
 					Name="Debug|Xbox">
 					<Tool
@@ -373,6 +373,9 @@
 						Name="VCCLCompilerTool"
 						CompileAs="2"/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\..\verbosity.c">
 			</File>
 			<Filter
 				Name="libretro-common"
@@ -381,17 +384,20 @@
 					Name="compat"
 					Filter="">
 					<File
-						RelativePath="..\..\libretro-common\compat\compat.c">
+						RelativePath="..\..\..\libretro-common\compat\compat_posix_string.c">
+					</File>
+					<File
+						RelativePath="..\..\..\libretro-common\compat\compat_strl.c">
 					</File>
 				</Filter>
 				<Filter
 					Name="file"
 					Filter="">
 					<File
-						RelativePath="..\..\libretro-common\file\config_file.c">
+						RelativePath="..\..\..\libretro-common\file\config_file.c">
 					</File>
 					<File
-						RelativePath="..\..\libretro-common\file\dir_list.c">
+						RelativePath="..\..\..\libretro-common\file\dir_list.c">
 						<FileConfiguration
 							Name="Debug|Xbox">
 							<Tool
@@ -424,7 +430,7 @@
 						</FileConfiguration>
 					</File>
 					<File
-						RelativePath="..\..\libretro-common\file\retro_dirent.c">
+						RelativePath="..\..\..\libretro-common\file\file_path.c">
 						<FileConfiguration
 							Name="Debug|Xbox">
 							<Tool
@@ -457,7 +463,50 @@
 						</FileConfiguration>
 					</File>
 					<File
-						RelativePath="..\..\libretro-common\file\file_path.c">
+						RelativePath="..\..\..\libretro-common\file\retro_dirent.c">
+						<FileConfiguration
+							Name="Debug|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Profile|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Profile_FastCap|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release_LTCG|Xbox">
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\..\..\libretro-common\file\retro_file.c">
+					</File>
+					<File
+						RelativePath="..\..\..\libretro-common\file\retro_stat.c">
+					</File>
+				</Filter>
+				<Filter
+					Name="string"
+					Filter="">
+					<File
+						RelativePath="..\..\..\libretro-common\string\string_list.c">
 						<FileConfiguration
 							Name="Debug|Xbox">
 							<Tool
@@ -491,40 +540,10 @@
 					</File>
 				</Filter>
 				<Filter
-					Name="string"
+					Name="hash"
 					Filter="">
 					<File
-						RelativePath="..\..\libretro-common\string\string_list.c">
-						<FileConfiguration
-							Name="Debug|Xbox">
-							<Tool
-								Name="VCCLCompilerTool"
-								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Profile|Xbox">
-							<Tool
-								Name="VCCLCompilerTool"
-								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Profile_FastCap|Xbox">
-							<Tool
-								Name="VCCLCompilerTool"
-								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Release|Xbox">
-							<Tool
-								Name="VCCLCompilerTool"
-								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Release_LTCG|Xbox">
-							<Tool
-								Name="VCCLCompilerTool"
-								ObjectFile="$(IntDir)/$(InputName)1.obj"/>
-						</FileConfiguration>
+						RelativePath="..\..\..\libretro-common\hash\rhash.c">
 					</File>
 				</Filter>
 			</Filter>

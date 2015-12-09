@@ -43,7 +43,7 @@ AUDIO
 /*============================================================
 UI COMMON CONTEXT
 ============================================================ */
-#if defined(_WIN32) && !defined(_XBOX)
+#if defined(_WIN32)
 #include "../gfx/common/win32_common.cpp"
 
 #ifdef HAVE_OPENGL
